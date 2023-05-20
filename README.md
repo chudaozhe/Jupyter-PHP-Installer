@@ -1,3 +1,49 @@
+兼容php8.1
+## 安装zmq扩展
+官方的[zmq](https://pecl.php.net/package/zmq)已多年不维护了，并且在php7.4中报错，所以只能选择第三方的了
+```
+wget https://github.com/stijnvdb88/php-zmq/archive/refs/tags/v4.3.4.tar.gz
+
+tar -xvzf php-zmq-4.3.4.tar.gz 
+mv php-zmq-4.3.4 /usr/src/php/ext/php-zmq
+
+#安装依赖
+apt-get install -y libzmq3-dev
+
+#安装扩展
+docker-php-ext-install php-zmq
+```
+
+## 安装Jupyter-PHP-Installer
+```
+php ./jupyter-php-installer.phar install -v
+```
+
+或者，在本项目根目录执行
+```
+//第一步
+composer install
+
+//第二步
+composer execute install
+
+#或者
+
+//第二步
+php src/EntryPoint/main.php install
+```
+
+## 构建 jupyter-php-installer.phar
+如果自己修改了代码，需要重新构建`jupyter-php-installer.phar`文件，请按以下步骤进行
+```
+composer install
+cd /tmp
+wget https://github.com/box-project/box/releases/download/4.3.8/box.phar
+chmod +x /tmp/box.phar
+/tmp/box.phar compile -v
+```
+
+=====================
 # Jupyter-PHP Installer ([Main Page](https://litipk.github.io/Jupyter-PHP-Installer/))
 
 [![Author](http://img.shields.io/badge/author-@castarco-blue.svg?style=flat-square)](https://twitter.com/castarco)
