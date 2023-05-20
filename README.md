@@ -1,4 +1,9 @@
-兼容php8.1
+主要更新
+
+- 升级box至4.3.8
+- 兼容composer2.x
+- 兼容php8.1
+
 ## 安装zmq扩展
 官方的[zmq](https://pecl.php.net/package/zmq)已多年不维护了，并且在php7.4中报错，所以只能选择第三方的了
 ```
@@ -42,6 +47,9 @@ wget https://github.com/box-project/box/releases/download/4.3.8/box.phar
 chmod +x /tmp/box.phar
 /tmp/box.phar compile -v
 ```
+
+## 详情
+https://www.cuiwei.net/p/1391718888
 
 =====================
 # Jupyter-PHP Installer ([Main Page](https://litipk.github.io/Jupyter-PHP-Installer/))
